@@ -1,0 +1,34 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite">
+    <groups>
+    </groups>
+    <test name="Test">
+      <class name="ArgosTest">
+        <test-method status="PASS" signature="oneTimeSetUp()" name="oneTimeSetUp" is-config="true" duration-ms="8" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="testEmptyCollection()" name="testEmptyCollection" duration-ms="5" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="1" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="testOneItemCollection()" name="testOneItemCollection" duration-ms="1" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="0" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="testSomething()" name="testSomething" duration-ms="1" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="1" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+        <test-method status="PASS" signature="oneTimeTearDown()" name="oneTimeTearDown" is-config="true" duration-ms="0" started-at="2012-06-09T03:56:23Z" finished-at="2012-06-09T03:56:23Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test" failures="0" tests="3" time="0.064" errors="0">
+  <properties/>
+  <testcase name="testEmptyCollection" time="0.005" classname="ArgosTest"/>
+  <testcase name="testOneItemCollection" time="0.001" classname="ArgosTest"/>
+  <testcase name="testSomething" time="0.001" classname="ArgosTest"/>
+</testsuite>
