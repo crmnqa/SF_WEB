@@ -25,11 +25,26 @@ public class webdriver{
 	
 	public static void main(String args[]) throws InterruptedException{
 	
-
-		WebDriver driver = new FirefoxDriver();
-		 
- 	driver.get("http://www.google.com");
+		WebDriver driver = new InternetExplorerDriver();
 		
+		driver.get("www.google.com");
+		
+		   //driver.quit();
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	//DEAL WITH CHROME 
+		  
+		  /* System.setProperty( "webdriver.chrome.driver","/ChromeDriver/chromedriver.exe");
+
+		  WebDriver driver = new ChromeDriver();
+		  driver.get("http://www.google.com/xhtml"); */
+ 	
  	
  	//DEAL WITH FLASH ---------------------------- http://code.google.com/p/flash-selenium/
  	
@@ -81,9 +96,12 @@ public class webdriver{
 	 List<WebElement> options = select.getOptions(); 
 	 System.out.println(options.size());
 	 for(int i = 0; i<=5;i++){
-	 System.out.println(options.get(i).getText()); }*/
+	 System.out.println(options.get(i).getText()); } //HELP http://stackoverflow.com/questions/858572/how-to-make-a-new-list-in-java*/
+		
+	//DEAL WITH DB TESTING DATA BASE   http://selftechy.com/2011/11/26/selenium-access-database-using-jdbc
 		
 		
+	//DEAL FRAMEWORK PROJECTS https://github.com/Ardesco/Ebselen/wiki   AND 		https://github.com/freynaud/testng-support/wiki
 		
  	}
 	
