@@ -26,13 +26,21 @@ public class JerseyClientPost  {
     		  .accept("application/json")
     		  .post(ClientResponse.class,formData);
       		   
-      	 
-      System.out.println(response.getEntity(String.class));
-          
-      JSONObject jo = new JSONObject(response.getEntity(String.class));
-
+      		 
+      		 String output = response.getEntity(String.class);
+      		System.out.println(output);
+      		   
+     
+      JSONObject jo = new JSONObject(output);
+//           
+      System.out.println(jo.get("tenantId"));
+      
+      
       System.out.println(response.getStatus());
-   
+      System.out.println( response.getClientResponseStatus());
+     
+    
+ 
       MultivaluedMap headers =  response.getHeaders();
 	  
 	  
