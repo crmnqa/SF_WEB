@@ -5,9 +5,9 @@
   
   
   <classes>
-      <!--  <class name="webDriver"></class>       -->
-         <class name="ArgosTest"></class>
-      <!--  <class name="Meetup"></class> -->
+     
+         <class name="WebDriverWebJourney"></class>
+ 
 		</classes>
   
   </test> <!-- Test -->

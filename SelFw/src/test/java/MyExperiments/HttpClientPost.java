@@ -33,10 +33,7 @@ public class HttpClientPost {
 		
 		
 		HttpResponse response = httpClient.execute(postRequest);
-	 
-     
-    	
-    	
+	    	
     	System.out.println(response.getStatusLine().getStatusCode());
     	
     	BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
@@ -45,9 +42,13 @@ public class HttpClientPost {
 		System.out.println("Output from Server .... \n");
 		while ((output = br.readLine()) != null) {
 			System.out.println(output);
+			
+			JSONObject jo = new JSONObject(output);
+			 System.out.println(jo.get("tenantId"));
+			 
 		}
     	
-	 
+		
     	
 		 
 	}

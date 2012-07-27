@@ -20,7 +20,7 @@ public class JerseyClientPost  {
     		   ClientResponse response =
     		  resource.header("X-NI-signatureType", "2")
     		  .header("X-NI-apiVersion", "1")
-    		  .header("X-NI-signatureHash", "dummy")
+    		  .header("X-NI-signatureHash", "dummy") 
     		  .header("X-NI-apiKey", "a3a0a84318e06c048a8bdb56c966f060")
     		  .type("application/json")
     		  .accept("application/json")
@@ -32,16 +32,17 @@ public class JerseyClientPost  {
       		   
      
       JSONObject jo = new JSONObject(output);
-//           
+            
       System.out.println(jo.get("tenantId"));
+      System.out.println(jo.get("username"));
       
       
-      System.out.println(response.getStatus());
+    //  System.out.println(response.getStatus());
       System.out.println( response.getClientResponseStatus());
      
     
  
-      MultivaluedMap headers =  response.getHeaders();
+  //    MultivaluedMap headers =  response.getHeaders();
 	  
 	  
 	  

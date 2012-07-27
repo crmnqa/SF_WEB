@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 	
-	public class YahooService{
+	public class YahooServiceSOAP{
 		public static void main(String args[]) throws IOException{
 
 		//String request = "http://api.search.yahoo.com/WebSearchService/V1/webSearch?appid=YahooDemo&query=umbrella&results=10";
