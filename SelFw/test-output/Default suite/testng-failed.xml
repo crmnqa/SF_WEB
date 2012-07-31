@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="MyExperiments.WebDriverWebJourney">
+      <class name="MyExperiments.WebJourney">
         <methods>
+          <include name="E_checkProfile"/>
+          <include name="B_CheckProfile"/>
           <include name="setUp"/>
-          <include name="testWebDriverWebJourney"/>
         </methods>
-      </class> <!-- MyExperiments.WebDriverWebJourney -->
+      </class> <!-- MyExperiments.WebJourney -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
