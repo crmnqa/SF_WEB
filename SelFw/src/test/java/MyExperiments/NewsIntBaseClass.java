@@ -35,9 +35,11 @@ public class NewsIntBaseClass {
 		String day = "01";
 		String month = "Jan";
 		String year = "1990";
+		String dob = year +"-"+ "01" +"-"+ day ;
 		String postcode = "HA90AB";
 		String city = "Wembley";
-		
+		String country = "United Kingdom";
+		String DispName = firstName+" "+lastName; 
 		//Updated
 		
 		String u_title = "Mrs";
@@ -46,8 +48,11 @@ public class NewsIntBaseClass {
 		String u_day = "02";
 		String u_month = "Feb";
 		String u_year = "1980";
+		String u_dob = year +"-"+ "02" +"-"+ day ;
 		String u_postcode = "HA99UB";
 		String u_city = "Wembley Park";
+		String u_DispName = u_firstName+" "+u_lastName; 
+	 
 		
 		
 		
@@ -108,19 +113,14 @@ public class NewsIntBaseClass {
  		driver.findElement(By.id("ni-pay-btn-dd")).submit();
  		Thread.sleep(5000);
  		
- 		
-// 		driver.findElement(By.id("ni-pay-btn-bottom")).click();
-//		 driver.findElement(By.id("ni-pay-btn-bottom")).click();
+  
 		
 	}
 	
 	
 	public void webjourneyEdit() throws InterruptedException {
-		
-		
-		 
+				 
 		driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id9']/div[2]/fieldset/input")).click();
-		// payment details ---  driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id9']/div[3]/fieldset/input")).click();
 		new Select(driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_title"))).selectByVisibleText(u_title);
 		driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_first_name")).clear();
 		driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_first_name")).sendKeys(u_firstName);
@@ -140,34 +140,24 @@ public class NewsIntBaseClass {
 		driver.findElement(By.id("ni-reg-btn-register")).submit();
 		Thread.sleep(5000);
 	    driver.findElement(By.xpath(".//*[@id='ni-pay-btn-dd']")).click();
-	  //  driver.findElement(By.xpath(".//*[@id='ni-pay-btn-dd']")).click();
-	   // driver.findElement(By.xpath(".//*[@id='ni-pay-btn-dd']")).click();
+	    driver.findElement(By.xpath(".//*[@id='ni-pay-btn-bottom']")).click();
+	    driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id3:ni-webj-page-thankyou-continue']")).click();
 	    Thread.sleep(5000); 
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 
 	  public static String[] custProfile(String content, String endpoint) throws JSONException{
 			   
 			   	String output =   restful(content, endpoint);
 			  
-			   String[ ] profile = new String[10];
+			     String[ ] profile = new String[12];
 			    
-			      JSONObject jo = new JSONObject(output);   
+			       JSONObject jo = new JSONObject(output);   
 		   
 			  	  profile[0] = jo.get( "tenantId").toString();
 			  	  profile[1] = jo.get( "username").toString();
-			 // 	  profile[2] = jo.get( "externalId").toString();
+			      profile[2] = jo.get( "externalId").toString();
 			  	   
 			     	JSONObject jos = new JSONObject(jo.get( "profileData").toString()); 
 			  	  
@@ -178,21 +168,47 @@ public class NewsIntBaseClass {
 			  	  profile[7] = jos.get( "iamId").toString();
 			  	  profile[8] = jos.get( "city").toString();
 			  	  profile[9] = jos.get( "country").toString();
-			  	  
-//			   	  for ( int i = 0 ; i<=9; i ++)
-////		  		  
-//		  	  {
-//		  		
-//		  		System.out.println(profile[i]);
-//		  		  
-//		  	  }
-			   		   
+			  	  profile[10] = jos.get( "dob").toString();
+			  	 profile[11] = jos.get( "postcode").toString();
+			  	
+	   
 			    return profile;
 			   	  
 		  }       
 		 	
 
-		  public static String restful(String content, String endpoint) {
+
+
+	  public static String[] custEntitlements(String content, String endpoint) throws JSONException{
+			   
+			   	String output =   restful(content, endpoint);
+			  
+			     String[ ] entitlement = new String[12];
+			    
+			       JSONObject jo = new JSONObject(output);   
+		   
+			       entitlement[0] = jo.get("subscriptions").toString();
+			  	  
+	   
+			    return entitlement;
+			   	  
+		  }       
+		 	
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  public static String restful(String content, String endpoint) {
 			  
 			  Client client = new Client();
 			   WebResource resource = client.resource(endpoint);
@@ -206,7 +222,6 @@ public class NewsIntBaseClass {
 			 		  .accept("application/json")
 			 		  .post(ClientResponse.class,content);
 					return response.getEntity(String.class);
-
 				 
 			   		   
 			  }
