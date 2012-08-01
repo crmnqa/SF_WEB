@@ -12,78 +12,79 @@ public class  WebJourney {
 	WebJourneyBaseClass NI = new WebJourneyBaseClass();
 	AcsCalls acs=new AcsCalls();
     String email = NI.email;	 
-      
-    String endpoint = "https://acs-uat.newsint.co.uk/profile/getUserProfile";
-    String EntitlementEndpoint = "http://acs-uat.newsint.co.uk/authZ/getUserEntitlements";
-        
-   	@BeforeClass
+     
+       
+   	@BeforeClass(groups = "a") 
  	public void setUp() throws Exception {
  	NI.setup();
  	 
  	}
 	    
- 	@Test 
-	public void A_testWebDriverWebJourney1() throws Exception {
+  	@Test (groups = "a") 
+	public void A_WebJourney1() throws Exception {
  	System.out.println("Step 1:-- Web journey - PART-1 started...stops beofre filling payment details....... " + "User ID is:---" + email); 	  	  
  	NI.webjourney1(email);
  	}
+ 	 
  	
- 	@Test 
+ 	@Test (groups = "a") 
 	public void B_CheckProfile() throws Exception {
  		Thread.sleep(5000) ;
  		System.out.println("Step 2:-- Call out ACS to compare values entered in web journey....." ); 	
  		//Get external ID and IAM id from sales force
  		String[] exp =  {"tnl",NI.email,"External_ID",NI.lastName,NI.email,NI.DispName,NI.firstName,"IAM_ID",NI.city,NI.country,NI.dob,NI.postcode} ;
  		String content = "{\"tenantId\":\"TNL\",\"username\":\"" + email +"\"}" ;
- 		String[] profile  = acs.custProfile(content,endpoint)  ;
+ 		String[] profile  = acs.custProfile(content,acs.profile)  ;
  		Assert.assertEquals( ProfileMatch(exp, profile),true,"Profile before updation........");
  		B_Assert_CheckProfile(profile);
  		}
  	 	 	
- 	@Test 
-	public void C_testWebDriverWebJourney2() throws Exception {
+ 	@Test (groups = "a") 
+	public void C_WebJourney2() throws Exception {
  	 	System.out.println("Step 3 :-- Web journey PART-2 fill payment details and save......." ); 	 
  		NI.webjourney2(email);
 
- 	}
+ 	}  
  	
-	@Test 
+	@Test (groups = "a") 
 	public void D_CheckEntitlement() throws Exception {
- 		  
+		String email = "websel_08_01_11_38_43@zaqwsx.com" ;
  		System.out.println("Step 4:-- Call out ACS to check entitlements....." ); 		
  		String content = "{\"tenantId\":\"TNL\",\"username\":\"" + email +"\"}" ;
- 		String[] entitlement = acs.custEntitlements(content,EntitlementEndpoint)  ;	
- 	 
+ 		String[] entitlement = acs.custEntitlements(content,acs.Entitlement)  ;	
+ 		
  	   Assert.assertEquals( EntitlementMatch(entitlement),false,"Entitlements  before updation...should be zero......."); 
  	}
  	
- 	
- 	@Test 
-	public void E_testWebDriverWebJourneyEdit() throws Exception {
+ 	 
+ 	@Test (groups = "a")
+	public void E_WebJourneyEdit() throws Exception {
  	 	System.out.println("Step 5:--- Editing user detals in middle of journey........." ); 	 
  		NI.webjourneyEdit();
  	}
  	 	
- 	@Test 
+ 	@Test (dependsOnGroups = "a")
 	public void F_checkProfile() throws Exception {
  		  
  		System.out.println("Step 6:-- Call out ACS to compare updated values in web journey....." ); 		
  		String[] exp =  {"tnl",NI.email,"External_ID",NI.u_lastName,NI.email,NI.u_DispName,NI.u_firstName,"IAM_ID",NI.u_city,NI.country,NI.u_dob,NI.postcode} ;
  		String content = "{\"tenantId\":\"TNL\",\"username\":\"" + email +"\"}" ;
- 		String[] profile2  = acs.custProfile(content,endpoint)  ;	
+ 		String[] profile2  = acs.custProfile(content,acs.profile)  ;	
  	    Assert.assertEquals( ProfileMatch(exp, profile2),true,"Profile after updation........");
  		E_Assert_checkProfile(profile2) ; 
  	}
  	 	
- 	@Test 
+ 	@Test (dependsOnGroups = "a")
 	public void G_CheckEntitlement() throws Exception {
  		  
  		System.out.println("Step 7:-- Call out ACS to check entitlements..Should exist now..." ); 		
  		String content = "{\"tenantId\":\"TNL\",\"username\":\"" + email +"\"}" ;
- 		String[] entitlement =acs.custEntitlements(content,EntitlementEndpoint)  ;	
+ 		String[] entitlement =acs.custEntitlements(content,acs.Entitlement)  ;	
+ 		System.out.println(EntitlementMatch(entitlement)); 
  	    Assert.assertEquals( EntitlementMatch(entitlement),true,"Entitlements  before updation...should be zero......."); 
  	}
  	
+ 	 
   
  	
  
@@ -151,21 +152,6 @@ public class  WebJourney {
 	
  	}
  	
- 	public boolean EntitlementMatch(String[] enti) {
- 		
- 		boolean flag = true;
- 		
- 		System.out.println(enti.length);
- 		
- 		if ( enti[0].length() <= 12 ) {
- 			
- 			flag = false;
- 		
- 		}
- 		
- 		return flag;
- 	}
- 	
  	
  	
  	public void E_Assert_checkProfile(String[] profile2) throws Exception {
@@ -200,6 +186,23 @@ public class  WebJourney {
 	   Assert.assertEquals( profile[10],NI.dob,"dob verification");
 	  Assert.assertEquals( profile[11],NI.postcode,"PostCode verification");
 }    
+
+ 	// Entitlement Verification and Validation
+	
+	public boolean EntitlementMatch(String[] enti) {
+ 		
+ 		boolean flag = true;
+ 		
+ 		//System.out.println(enti[0].length());
+ 		
+ 		if ( enti[0].length() == 2  ) {
+ 			
+ 			flag = false;
+ 		
+ 		}
+ 		
+ 		return flag;
+ 	}
  	
 		
 }

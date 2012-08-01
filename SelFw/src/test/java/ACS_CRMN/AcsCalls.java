@@ -7,6 +7,11 @@ public class AcsCalls {
 
 	  static UtilitiesBaseClass uti = new UtilitiesBaseClass();
 	
+	  String profile = "https://acs-uat.newsint.co.uk/profile/getUserProfile";
+	  String Entitlement  = "http://acs-uat.newsint.co.uk/authZ/getUserEntitlements";
+	  
+	  
+	  
 	
 	//**** PROFILE *****
 	
@@ -31,7 +36,7 @@ public class AcsCalls {
 		  	  profile[7] = jos.get( "iamId").toString();
 		  	  profile[8] = jos.get( "city").toString();
 		  	  profile[9] = jos.get( "country").toString();
-		  	  profile[10] = jos.get( "dob").toString();
+		  	  profile[10] = jos.get( "dateOfBirth").toString();
 		  	 profile[11] = jos.get( "postcode").toString();
 		  	
 

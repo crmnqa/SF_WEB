@@ -1,16 +1,11 @@
 package ACS_CRMN;
 import ACS_CRMN.UtilitiesBaseClass; 
 import java.util.concurrent.TimeUnit;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.Select;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
 
 public class WebJourneyBaseClass {
 	 
@@ -56,7 +51,7 @@ public class WebJourneyBaseClass {
 		 profile.setAcceptUntrustedCertificates(true);
 		 profile.setAssumeUntrustedCertificateIssuer(false);
 		driver = new FirefoxDriver(profile);
-		baseUrl = "http://www.uat-thetimes.co.uk/";
+		//baseUrl = "http://www.uat-thetimes.co.uk/";
 		 driver.manage().deleteAllCookies(); 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		 
@@ -70,8 +65,16 @@ public class WebJourneyBaseClass {
  		Thread.sleep(5000);
  	 	driver.findElement(By.xpath(".//*[@id='papers']/a/img")).click();
  		Thread.sleep(5000);
- 		driver.findElement(By.xpath(".//*[@id='iam-new-barrier']/a[2]/img")).click();
+ 		//driver.findElement(By.xpath(".//*[@id='iam-new-barrier']/a[2]/img")).click();
+ 		
+ 		
+ 		driver.findElement(By.linkText("Log in")).click();
+ 		driver.findElement(By.linkText("Join today.")).click();
+ 		
  		driver.findElement(By.xpath(".//*[@id='j_id0:j_id3:j_id11:j_id22:0:btnTopSubscribe']")).click();
+ 		
+ 		
+ 		
 		driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_email")).sendKeys(email);
 		driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_password")).sendKeys(password );
 		driver.findElement(By.id("j_id0:j_id1:personal_details_form:user_confirm_password")).sendKeys(password );
@@ -136,90 +139,78 @@ public class WebJourneyBaseClass {
 	    driver.findElement(By.xpath(".//*[@id='ni-pay-btn-dd']")).click();
 	    driver.findElement(By.xpath(".//*[@id='ni-pay-btn-bottom']")).click();
 	    driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id3:ni-webj-page-thankyou-continue']")).click();
-	    Thread.sleep(5000); 
-		
+	    Thread.sleep(10000); 
+	    driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id3:ni-webj-page-thankyou-continue']")).click();
+	    driver.findElement(By.xpath(".//*[@id='j_id0:j_id1:j_id3:ni-webj-page-thankyou-continue']")).click();
 	}
 		
+public void testCSRNEWCUST() throws InterruptedException {
+		
+		driver.manage().deleteAllCookies(); 
+		driver.get("https://test.salesforce.com/");
+		driver.findElement(By.id("username")).sendKeys("crm.admin@newsint.co.uk.staging");
+		 
+		driver.findElement(By.id("password")).sendKeys("England2012");
+		driver.findElement(By.id("Login")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.cssSelector("img.allTabsArrow")).click();
+		driver.findElement(By.linkText("Customers")).click();
+		driver.findElement(By.name("new")).click();
+		driver.findElement(By.cssSelector("#bottomButtonRow > input[name=\"save\"]")).click();
+ 
+		driver.findElement(By.id("PersonEmail")).sendKeys(email);
+	 
+		driver.findElement(By.id("name_firstacc2")).sendKeys("CSR FIRST");
+ 
+		driver.findElement(By.id("name_lastacc2")).sendKeys("Last CSR");
+		new Select(driver.findElement(By.xpath("//div[@id='ep']/div[2]/div[3]/table/tbody/tr[4]/td[2]/select"))).selectByVisibleText("Mr");
+		new Select(driver.findElement(By.id("00N20000003Ag9N"))).selectByVisibleText("Male");
+ 
+		driver.findElement(By.id("00N20000003Ag9M")).sendKeys("DisplayName");
+ 
+		driver.findElement(By.id("00N20000003B43e")).sendKeys("Flat 1");
+ 
+		driver.findElement(By.id("00N20000003B43f")).sendKeys("Forum House");
+ 
+		driver.findElement(By.id("00N20000003B43g")).sendKeys("Empire Way");
+ 
+		driver.findElement(By.id("00N20000003B43l")).sendKeys("HA9 0AB");
+ 
+		driver.findElement(By.id("00N20000003B43h")).sendKeys("London");
+ 
+		driver.findElement(By.id("00N20000003B43j")).sendKeys("Wembley");
+		driver.findElement(By.id("PersonBirthdate")).click();
+ 
+		driver.findElement(By.id("PersonBirthdate")).sendKeys("12/07/1990");
+		new Select(driver.findElement(By.id("00N20000003Ajpc"))).selectByVisibleText("TNL");
+		driver.findElement(By.cssSelector("#bottomButtonRow > input[name=\"save\"]")).click();
+		
+		
 
-//	  public static String[] custProfile(String content, String endpoint) throws JSONException{
-//			   
-//			   	String output =   uti.restful(content, endpoint);
-//			  
-//			     String[ ] profile = new String[12];
-//			    
-//			       JSONObject jo = new JSONObject(output);   
-//		   
-//			  	  profile[0] = jo.get( "tenantId").toString();
-//			  	  profile[1] = jo.get( "username").toString();
-//			      profile[2] = jo.get( "externalId").toString();
-//			  	   
-//			     	JSONObject jos = new JSONObject(jo.get( "profileData").toString()); 
-//			  	  
-//			  	  profile[3] = jos.get( "lastName").toString();
-//			  	  profile[4] = jos.get( "email").toString();
-//			  	  profile[5] = jos.get( "displayName").toString();
-//			  	  profile[6] = jos.get( "firstName").toString();
-//			  	  profile[7] = jos.get( "iamId").toString();
-//			  	  profile[8] = jos.get( "city").toString();
-//			  	  profile[9] = jos.get( "country").toString();
-//			  	  profile[10] = jos.get( "dob").toString();
-//			  	 profile[11] = jos.get( "postcode").toString();
-//			  	
-//	   
-//			    return profile;
-//			   	  
-//		  }       
-//		 	
-//
+}
 
 
-//	  public static String[] custEntitlements(String content, String endpoint) throws JSONException{
-//			   
-//			   	String output =   uti.restful(content, endpoint);
-//			  
-//			     String[ ] entitlement = new String[12];
-//			    
-//			       JSONObject jo = new JSONObject(output);   
-//		   
-//			       entitlement[0] = jo.get("subscriptions").toString();
-//			  	  
-//	   
-//			    return entitlement;
-//			   	  
-//		  }       
-//		 	
-//	  
-//	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-//	  
-//	  public static String restful(String content, String endpoint) {
-//			  
-//			  Client client = new Client();
-//			   WebResource resource = client.resource(endpoint);
-//			    
-//			 		   ClientResponse response =
-//			 		   resource.header("X-NI-signatureType", "2")
-//			 		  .header("X-NI-apiVersion", "1")
-//			 		  .header("X-NI-signatureHash", "dummy") 
-//			 		  .header("X-NI-apiKey", "a3a0a84318e06c048a8bdb56c966f060")
-//			 		  .type("application/json")
-//			 		  .accept("application/json")
-//			 		  .post(ClientResponse.class,content);
-//					return response.getEntity(String.class);
-//				 
-//			   		   
-//			  }
-//			  
+public void subscribe(){
+	
+driver.findElement(By.name("subscribe")).click();
+driver.findElement(By.xpath("(//button[@type='button'])[10]")).click();
+driver.findElement(By.id("dd-mandate-close")).click();
+
+driver.findElement(By.id("dd_account_name")).sendKeys("CSRAccountHoler");
+
+driver.findElement(By.id("dd_bank_name")).sendKeys("CSRBankName");
+
+driver.findElement(By.id("dd_account_number")).sendKeys("12345678");
+
+driver.findElement(By.id("dd_account_sort_1")).sendKeys("11");
+
+driver.findElement(By.id("dd_account_sort_2")).sendKeys("11");
+
+driver.findElement(By.id("dd_account_sort_3")).sendKeys("11");
+driver.findElement(By.id("csr-paynow-dd")).click();
+
+
+}
 
 
 	}
