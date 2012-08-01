@@ -1,4 +1,4 @@
-package MyExperiments;
+
 import java.io.File;
 
 import org.openqa.selenium.By;

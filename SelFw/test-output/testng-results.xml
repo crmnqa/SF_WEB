@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="3" total="7" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="113920" started-at="2012-07-31T17:33:37Z" finished-at="2012-07-31T17:35:31Z">
+  <suite name="Default suite" duration-ms="109123" started-at="2012-08-01T11:06:11Z" finished-at="2012-08-01T11:08:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="113920" started-at="2012-07-31T17:33:37Z" finished-at="2012-07-31T17:35:31Z">
-      <class name="MyExperiments.WebJourney">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="setUp" is-config="true" duration-ms="18713" started-at="2012-07-31T17:33:37Z" finished-at="2012-07-31T17:33:56Z">
+    <test name="Default test" duration-ms="109123" started-at="2012-08-01T11:06:11Z" finished-at="2012-08-01T11:08:00Z">
+      <class name="ACS_CRMN.WebJourney">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="setUp" is-config="true" duration-ms="13588" started-at="2012-08-01T11:06:11Z" finished-at="2012-08-01T11:06:25Z">
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="A_testWebDriverWebJourney1()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="A_testWebDriverWebJourney1" duration-ms="37934" started-at="2012-07-31T17:33:56Z" finished-at="2012-07-31T17:34:34Z">
+        <test-method status="PASS" signature="A_testWebDriverWebJourney1()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="A_testWebDriverWebJourney1" duration-ms="38055" started-at="2012-08-01T11:06:25Z" finished-at="2012-08-01T11:07:03Z">
         </test-method> <!-- A_testWebDriverWebJourney1 -->
-        <test-method status="PASS" signature="B_CheckProfile()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="B_CheckProfile" duration-ms="5913" started-at="2012-07-31T17:34:34Z" finished-at="2012-07-31T17:34:40Z">
+        <test-method status="PASS" signature="B_CheckProfile()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="B_CheckProfile" duration-ms="5924" started-at="2012-08-01T11:07:03Z" finished-at="2012-08-01T11:07:09Z">
         </test-method> <!-- B_CheckProfile -->
-        <test-method status="PASS" signature="C_testWebDriverWebJourney2()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="C_testWebDriverWebJourney2" duration-ms="6660" started-at="2012-07-31T17:34:40Z" finished-at="2012-07-31T17:34:46Z">
+        <test-method status="PASS" signature="C_testWebDriverWebJourney2()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="C_testWebDriverWebJourney2" duration-ms="6637" started-at="2012-08-01T11:07:09Z" finished-at="2012-08-01T11:07:15Z">
         </test-method> <!-- C_testWebDriverWebJourney2 -->
-        <test-method status="PASS" signature="D_CheckEntitlement()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="D_CheckEntitlement" duration-ms="437" started-at="2012-07-31T17:34:46Z" finished-at="2012-07-31T17:34:47Z">
+        <test-method status="PASS" signature="D_CheckEntitlement()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="D_CheckEntitlement" duration-ms="306" started-at="2012-08-01T11:07:15Z" finished-at="2012-08-01T11:07:15Z">
         </test-method> <!-- D_CheckEntitlement -->
-        <test-method status="FAIL" signature="E_testWebDriverWebJourneyEdit()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="E_testWebDriverWebJourneyEdit" duration-ms="43902" started-at="2012-07-31T17:34:47Z" finished-at="2012-07-31T17:35:31Z">
+        <test-method status="FAIL" signature="E_testWebDriverWebJourneyEdit()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="E_testWebDriverWebJourneyEdit" duration-ms="44286" started-at="2012-08-01T11:07:15Z" finished-at="2012-08-01T11:08:00Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: {"method":"xpath","selector":".//*[@id='ni-pay-btn-bottom']"}
-Command duration or timeout: 30.94 seconds
+Command duration or timeout: 31.09 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
 System info: os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.6.0_20'
 Driver info: driver.version: RemoteWebDriver
-Session ID: 8874444a-ac99-4f2f-9ef6-84a301e85b08]]>
+Session ID: 3de65891-0aee-4af9-b188-9c7226456646]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='ni-pay-btn-bottom']"}
-Command duration or timeout: 30.94 seconds
+Command duration or timeout: 31.09 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
 System info: os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.6.0_20'
 Driver info: driver.version: RemoteWebDriver
-Session ID: 8874444a-ac99-4f2f-9ef6-84a301e85b08
+Session ID: 3de65891-0aee-4af9-b188-9c7226456646
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -47,8 +47,8 @@ Session ID: 8874444a-ac99-4f2f-9ef6-84a301e85b08
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:327)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:343)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:234)
-	at MyExperiments.NewsIntBaseClass.webjourneyEdit(NewsIntBaseClass.java:143)
-	at MyExperiments.WebJourney.E_testWebDriverWebJourneyEdit(WebJourney.java:62)
+	at ACS_CRMN.WebJourneyBaseClass.webjourneyEdit(WebJourneyBaseClass.java:137)
+	at ACS_CRMN.WebJourney.E_testWebDriverWebJourneyEdit(WebJourney.java:64)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -77,13 +77,13 @@ Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unabl
 Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
 System info: os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.6.0_20'
 Driver info: driver.version: unknown
-	at <anonymous class>.<anonymous method>(file:///C:/Users/JVendi/AppData/Local/Temp/anonymous4894219372303227803webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:6556)
-	at <anonymous class>.<anonymous method>(file:///C:/Users/JVendi/AppData/Local/Temp/anonymous4894219372303227803webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:471)
+	at <anonymous class>.<anonymous method>(file:///C:/Users/JVendi/AppData/Local/Temp/anonymous2367204355085806220webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:6556)
+	at <anonymous class>.<anonymous method>(file:///C:/Users/JVendi/AppData/Local/Temp/anonymous2367204355085806220webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:471)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
         </test-method> <!-- E_testWebDriverWebJourneyEdit -->
-        <test-method status="FAIL" signature="F_checkProfile()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="F_checkProfile" duration-ms="163" started-at="2012-07-31T17:35:31Z" finished-at="2012-07-31T17:35:31Z">
+        <test-method status="FAIL" signature="F_checkProfile()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="F_checkProfile" duration-ms="164" started-at="2012-08-01T11:08:00Z" finished-at="2012-08-01T11:08:00Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Profile after updation........ expected:<true> but was:<false>]]>
@@ -94,7 +94,7 @@ Driver info: driver.version: unknown
 	at org.testng.Assert.failNotEquals(Assert.java:489)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:281)
-	at MyExperiments.WebJourney.F_checkProfile(WebJourney.java:72)
+	at ACS_CRMN.WebJourney.F_checkProfile(WebJourney.java:74)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -123,7 +123,7 @@ Driver info: driver.version: unknown
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
         </test-method> <!-- F_checkProfile -->
-        <test-method status="FAIL" signature="G_CheckEntitlement()[pri:0, instance:MyExperiments.WebJourney@15cda3f]" name="G_CheckEntitlement" duration-ms="182" started-at="2012-07-31T17:35:31Z" finished-at="2012-07-31T17:35:31Z">
+        <test-method status="FAIL" signature="G_CheckEntitlement()[pri:0, instance:ACS_CRMN.WebJourney@8b819f]" name="G_CheckEntitlement" duration-ms="148" started-at="2012-08-01T11:08:00Z" finished-at="2012-08-01T11:08:00Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Entitlements  before updation...should be zero....... expected:<true> but was:<false>]]>
@@ -134,7 +134,7 @@ Driver info: driver.version: unknown
 	at org.testng.Assert.failNotEquals(Assert.java:489)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:281)
-	at MyExperiments.WebJourney.G_CheckEntitlement(WebJourney.java:82)
+	at ACS_CRMN.WebJourney.G_CheckEntitlement(WebJourney.java:84)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -163,7 +163,7 @@ Driver info: driver.version: unknown
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
         </test-method> <!-- G_CheckEntitlement -->
-      </class> <!-- MyExperiments.WebJourney -->
+      </class> <!-- ACS_CRMN.WebJourney -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

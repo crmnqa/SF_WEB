@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="none">
-
-
-  <test name="Test" preserve-order="true">
-  
-  
-  <classes>
+<suite name="CRMN" parallel="none">
+  <test name="Webjourney" preserve-order="true">
+   <classes>
      
-         <class name="WebDriverWebJourney">
+         <class name="ACS_CRMN.WebJourney">
  <methods>
         <include name="A_testWebDriverWebJourney1" />
-        <include name="checkProfile" />
-        
-      </methods>
+        <include name="B_CheckProfile" />
+        <include name="C_testWebDriverWebJourney2" />
+        <include name="D_CheckEntitlement" />
+        <include name="E_testWebDriverWebJourneyEdit " />
+        <include name="F_checkProfile" />
+        <include name="G_CheckEntitlement" />
+ </methods>
  </class>
 		</classes>
   
-  </test> <!-- Test -->
+  </test>  
   
   
-</suite> <!-- Suite -->
+</suite>  

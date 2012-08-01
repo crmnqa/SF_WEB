@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="MyExperiments.WebJourney">
+      <class name="ACS_CRMN.WebJourney">
         <methods>
-          <include name="F_checkProfile"/>
+          <include name="E_testWebDriverWebJourneyEdit"/>
           <include name="setUp"/>
           <include name="G_CheckEntitlement"/>
-          <include name="E_testWebDriverWebJourneyEdit"/>
+          <include name="F_checkProfile"/>
         </methods>
-      </class> <!-- MyExperiments.WebJourney -->
+      </class> <!-- ACS_CRMN.WebJourney -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

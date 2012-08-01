@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="none">
-  <test name="Test(failed)" parallel="none" preserve-order="true">
+<suite name="Failed suite [Suite1]">
+  <test name="Nopackage(failed)" preserve-order="true">
     <classes>
       <class name="MyExperiments.WebJourney">
         <methods>
           <include name="F_checkProfile"/>
           <include name="setUp"/>
           <include name="G_CheckEntitlement"/>
+          <include name="E_testWebDriverWebJourneyEdit"/>
         </methods>
       </class> <!-- MyExperiments.WebJourney -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Nopackage(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
